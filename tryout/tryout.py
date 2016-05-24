@@ -1,55 +1,71 @@
 import inspect
 from colors import colors
+import time
+import traceback
 
 class tryout(object):
-	exclude = [
-		'__init__',
-		'_finishTest',
-		'_handleError',
-		'run',
-	]
+	timeout = 5000
+	_timeoutTime = 9999999999
+
 	def __init__(self, bail=True):
 		self.bail = bail
-		self.methods = inspect.getmembers(self, predicate=inspect.ismethod)
-		self.methods = [method[0] for method in self.methods if method[0] not in self.exclude]
-		# colors('cyan','Tests:')
-		# print '\n'.join(self.methods)
+		self._methods = inspect.getmembers(self, predicate=inspect.ismethod)
+		# exclude run and any method that starts with _
+		self._methods = [method[0] for method in self._methods if method[0] != 'run' and method[0][0] != '_']
+		colors('cyan','Running:')
+		print ','.join(self._methods)
 
-	def _handleError(self, err=None, caughtException=False):
+	def _handleError(self, err=None, execInfo=None, caughtException=False):
 		if not err:
 			return
-
-		colors('red', 'Error:\n', err)
+		colors('red', '\n Error:\n', '=' * 30)
 
 		if not self.bail:
+			colors('red', str(err))
 			# if the error is a caught exception
 			# _finishTest won't have been called, so call it here
 			if caughtException:
 				return self._finishTest()
 			return
 
-		self.callback(err)
-		self.numTests = 0
-		self.callback = None
+		self._numTests = 0
+		# if we have a callback, let that handle the errors
+		if self._callback:
+			self._callback(err, execInfo)
+			self._callback = None
+			return
+
+		if type(err) == Exception:
+			raise err
+		raise Exception(err)
 
 	def _finishTest(self, err=None):
 		self._handleError(err)
 
-		self.testNum += 1
+		self._testNum += 1
 
 	def run(self, callback=None):
-		self.callback = callback
-		self.testNum = 0
-		self.numTests = len(self.methods)
-		while self.testNum < self.numTests:
-			colors('cyan', 'Running:', self.methods[self.testNum])
-			try:
-				getattr(self, self.methods[self.testNum])(self._finishTest)
-			except Exception as err:
-				self._handleError(err, caughtException=True)
+		self._callback = callback
+		self._testNum = 0
+		self._numTests = len(self._methods)
 
-		if self.callback:
-			self.callback(None)
+		while self._testNum < self._numTests and \
+			time.time() < self._timeoutTime:
+
+			self._timeoutTime = time.time() + self.timeout
+
+			colors('cyan', '\n Running:', self._methods[self._testNum])
+			colors('cyan', '=' * 30)
+			try:
+				getattr(self, self._methods[self._testNum])(self._finishTest)
+			except Exception as err:
+				self._handleError(err, traceback.format_exc(), caughtException=True)
+
+		if self._callback:
+			self._callback(None)
+
+
+
 
 def main():
 	class testStuff(tryout):
@@ -57,29 +73,26 @@ def main():
 			print 'Test A'
 			done()
 
-		def runB(self, done):
-			print 'Test B'
-			done()
-
 		def errorC(self, done):
 			print 'Test C'
 			done('omg error')
 
-		def runD(self, done):
-			print 'Test D'
+		def runB(self, done):
+			print 'Test B'
 			done()
 
-	tests = testStuff()
 	def testsComplete(err):
-		print 'All done'
 		print 'Error:', err
 
-	print '\n\nThis will bail on error\n'
-	tests.run(testsComplete)
+	tests = testStuff()
 
-	print '\n\nThis will run all tests\n'
+	print 'Run all tests with a callback'
 	tests.bail = False
 	tests.run(testsComplete)
+
+	print 'Bails on error by default'
+	tests.run()
+
 
 if __name__ == '__main__':
 	main()
