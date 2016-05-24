@@ -11,7 +11,7 @@ class colors:
 
 	def __init__(self, *args):
 		text = ' '.join(args[1:])
-		print getattr(self, args[0]), text, self.end
+		print getattr(self, args[0]) + text, self.end
 
 
 def main():

@@ -3,6 +3,8 @@ Simple unit testing for Python.
 
 ```
 	class testStuff(tryout):
+		title = 'tests/testStuff.py'
+
 		def runA(self, done):
 			print 'Test A'
 			done()
