@@ -48,3 +48,8 @@ Then run:
 ```
 	c:/someModule >>> python tests
 ```
+
+
+To Do
+- [ ] add suite time
+- [ ] add summary for all suites
