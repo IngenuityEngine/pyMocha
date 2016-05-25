@@ -10,7 +10,7 @@ class TestSuite(object):
 	_timeoutTime = 9999999999
 	_errors = 0
 	_lineLength = 50
-	_lineColor = 'yellow'
+	_lineColor = 'cyan'
 	_isTestSuite = True
 
 	title = 'Generic Tests'
@@ -60,7 +60,7 @@ class TestSuite(object):
 
 	def run(self, callback=None):
 		colors('magenta', '\n\n Suite:', colors.end + self.title)
-		colors(self._lineColor, '=' * self._lineLength)
+		colors('magenta', '=' * self._lineLength)
 
 		self._callback = callback
 		self._testNum = 0
