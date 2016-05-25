@@ -1,13 +1,17 @@
+import os
 import inspect
 from colors import colors
 import time
 import traceback
+import imp
 
-class tryout(object):
+class TestSuite(object):
 	timeout = 5000
 	_timeoutTime = 9999999999
 	_errors = 0
 	_lineLength = 50
+	_lineColor = 'yellow'
+	_isTestSuite = True
 
 	title = 'Generic Tests'
 
@@ -55,8 +59,8 @@ class tryout(object):
 		self._testNum += 1
 
 	def run(self, callback=None):
-		colors('cyan', '\n\n Test Suite:', colors.end + self.title)
-		colors('cyan', '=' * self._lineLength)
+		colors('magenta', '\n\n Suite:', colors.end + self.title)
+		colors(self._lineColor, '=' * self._lineLength)
 
 		self._callback = callback
 		self._testNum = 0
@@ -72,7 +76,7 @@ class tryout(object):
 				.replace('_', ' ')
 
 			colors('cyan', '\n Test:', colors.end + methodName)
-			colors('cyan', '=' * self._lineLength)
+			colors(self._lineColor, '=' * self._lineLength)
 			try:
 				getattr(self, self._methods[self._testNum])(self._finishTest)
 			except Exception as err:
@@ -82,12 +86,12 @@ class tryout(object):
 				self._handleError(err, traceback.format_exc(), caughtException=True)
 
 			if self._errors > startingErrors:
-				colors('red', '\nFailed')
+				colors('red', '\n Failed')
 			else:
-				colors('green', 'Passed')
+				colors('green', ' Passed')
 
 		colors('cyan','\n\n Results:')
-		colors('cyan', '=' * self._lineLength)
+		colors(self._lineColor, '=' * self._lineLength)
 		passed = self._numTests - self._errors
 		passed = str(passed) + ' passed'
 		failed = self._errors
@@ -97,16 +101,33 @@ class tryout(object):
 			colors('red', title, passed + ',', failed)
 		else:
 			colors('green', title, passed)
-		colors('cyan', '=' * self._lineLength)
+		colors(self._lineColor, '=' * self._lineLength)
 
 		if self._callback:
 			self._callback(None)
 
+def run(test, callback=None, *args, **kwargs):
+	suite = test(*args, **kwargs)
+	suite.run(callback)
 
+def runFolder(path):
+	root = os.path.dirname(path)
+
+	files = os.listdir(root)
+	for f in files:
+		if f == '__main__.py' or f[0] == '.' or f[-2:] != 'py':
+			continue
+		moduleName = f.split('.')[0]
+		modulePath = os.path.join(root, f)
+		mod = imp.load_source(moduleName, modulePath)
+		# get all the test suites for a given file
+		suites = [getattr(mod, c) for c in dir(mod) if hasattr(getattr(mod, c), '_isTestSuite')]
+		for suite in suites:
+			run(suite)
 
 
 def main():
-	class testStuff(tryout):
+	class testStuff(TestSuite):
 		title = 'tests/testStuff.py'
 
 		def runA(self, done):
@@ -126,12 +147,10 @@ def main():
 
 
 	print 'Run all tests with a callback'
-	tests = testStuff(bail=False)
-	tests.run(testsComplete)
+	run(testStuff, testsComplete, bail=False)
 
-	print 'Bails on error by default'
-	tests = testStuff()
-	tests.run()
+	print 'Tryout bails on error by default'
+	run(testStuff)
 
 
 if __name__ == '__main__':

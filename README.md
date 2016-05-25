@@ -1,8 +1,11 @@
 # Tryout
-Simple unit testing for Python.
+###Simple unit testing for Python.
 
+Basic example:
 ```
-	class testStuff(tryout):
+	import tryout
+
+	class testStuff(TestSuite):
 		title = 'tests/testStuff.py'
 
 		def runA(self, done):
@@ -11,7 +14,7 @@ Simple unit testing for Python.
 
 		def errorC(self, done):
 			print 'Test C'
-			done('omg error')
+			raise Exception('omg error')
 
 		def runB(self, done):
 			print 'Test B'
@@ -20,12 +23,28 @@ Simple unit testing for Python.
 	def testsComplete(err):
 		print 'Error:', err
 
-	tests = testStuff()
 
 	print 'Run all tests with a callback'
-	tests.bail = False
-	tests.run(testsComplete)
+	tryout.run(testStuff, testsComplete, bail=False)
 
-	print 'Bails on error by default'
-	tests.run()
+	print 'Tryout bails on error by default'
+	tryout.run(testStuff)
+```
+
+## Running A Folder of Tests
+
+Save this as ```c:/someModule/tests/__main__.py```:
+```
+	import os
+	import sys
+	sys.path.append('c:/PATH/TO/tryout')
+
+	import tryout
+	tryout.runFolder(os.path.realpath(__file__))
+```
+
+Then run:
+
+```
+	c:/someModule >>> python tests
 ```
