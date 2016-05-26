@@ -12,6 +12,7 @@ class TestSuite(object):
 	_lineLength = 50
 	_lineColor = 'cyan'
 	_isTestSuite = True
+	_ignore = ['run', 'setUp', 'tearDown', 'assertEqual', 'assertTrue']
 
 	title = 'Generic Tests'
 
@@ -19,7 +20,15 @@ class TestSuite(object):
 		self.bail = bail
 		self._methods = inspect.getmembers(self, predicate=inspect.ismethod)
 		# exclude run and any method that starts with _
-		self._methods = [method[0] for method in self._methods if method[0] != 'run' and method[0][0] != '_']
+		self._methods = [method[0] for method in self._methods if method[0] not in self._ignore and method[0][0] != '_']
+
+	def assertEqual(self, a, b):
+		if a != b:
+			raise Exception(str(a) + ' != ' + str(b))
+
+	def assertTrue(self, a):
+		if not a:
+			raise Exception(str(a) + ' != True')
 
 	def _handleError(self, err=None, execInfo=None, caughtException=False):
 		if not err:
@@ -58,6 +67,66 @@ class TestSuite(object):
 
 		self._testNum += 1
 
+	def _runTest(self):
+		testFunction = getattr(self, self._methods[self._testNum])
+
+		# run the tearDown function w/ optional callback
+		# when tearDown is done, call _finishTest
+		def tearDown():
+			try:
+				hasCallback = len(
+					inspect.getargspec(self.tearDown).args) > 1
+				if hasCallback:
+					self.tearDown(self._finishTest)
+				else:
+					self.tearDown()
+					self._finishTest()
+			except Exception as err:
+				if self.bail:
+					colors('red', '\nError:\n')
+					raise err
+				self._handleError(err, traceback.format_exc(), caughtException=True)
+
+		# run the test w/ tearDown as the callback
+		def runTest():
+			try:
+				# the callback is optional, so we try to pass it
+				# first, then catch the argument error and try it
+				# without the callback
+				hasCallback = len(
+					inspect.getargspec(testFunction).args) > 1
+				if hasCallback:
+					testFunction(tearDown)
+				else:
+					testFunction()
+					tearDown()
+			except Exception as err:
+				if self.bail:
+					colors('red', '\nError:\n')
+					raise err
+				self._handleError(err, traceback.format_exc(), caughtException=True)
+
+		# run the setUp function w/ optional callback
+		try:
+			hasCallback = len(
+					inspect.getargspec(self.setUp).args) > 1
+			if hasCallback:
+				self.setUp(runTest)
+			else:
+				self.setUp()
+				runTest()
+		except Exception as err:
+			if self.bail:
+				colors('red', '\nError:\n')
+				raise err
+			self._handleError(err, traceback.format_exc(), caughtException=True)
+
+	def setUp(self):
+		pass
+
+	def tearDown(self):
+		pass
+
 	def run(self, callback=None):
 		colors('magenta', '\n\n Suite:', colors.end + self.title)
 		colors('magenta', '=' * self._lineLength)
@@ -77,13 +146,8 @@ class TestSuite(object):
 
 			colors('cyan', '\n Test:', colors.end + methodName)
 			colors(self._lineColor, '=' * self._lineLength)
-			try:
-				getattr(self, self._methods[self._testNum])(self._finishTest)
-			except Exception as err:
-				if self.bail:
-					colors('red', '\nError:\n')
-					raise err
-				self._handleError(err, traceback.format_exc(), caughtException=True)
+
+			self._runTest()
 
 			if self._errors > startingErrors:
 				colors('red', '\n Failed')

@@ -1,0 +1,1945 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ex",
+				"exception"
+			],
+			[
+				"time",
+				"timeout"
+			],
+			[
+				"err",
+				"err"
+			],
+			[
+				"should",
+				"shouldRunA"
+			],
+			[
+				"test",
+				"testsComplete"
+			],
+			[
+				"eve",
+				"events"
+			],
+			[
+				"even",
+				"eventName"
+			],
+			[
+				"lat",
+				"latestInfo"
+			],
+			[
+				"work",
+				"workspaceDirs"
+			],
+			[
+				"v",
+				"versionToRequeue"
+			],
+			[
+				"ver",
+				"versionToRequeue"
+			],
+			[
+				"vers",
+				"versions"
+			],
+			[
+				"nuke",
+				"nukeFrameRange"
+			],
+			[
+				"get",
+				"getFrameRange"
+			],
+			[
+				"fr",
+				"frameRange"
+			],
+			[
+				"fogHeight",
+				"fogHeightStart"
+			],
+			[
+				"ser",
+				"searchTerm"
+			],
+			[
+				"searc",
+				"searchTerm"
+			],
+			[
+				"se",
+				"searchTerm"
+			],
+			[
+				"sub",
+				"submitSearch"
+			],
+			[
+				"proj",
+				"project"
+			],
+			[
+				"user",
+				"userModel"
+			],
+			[
+				"ve",
+				"version"
+			],
+			[
+				"fie",
+				"fieldView"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"pr",
+				"project"
+			],
+			[
+				"sequ",
+				"sequenceInfo"
+			],
+			[
+				"seq",
+				"sequenceInfo"
+			],
+			[
+				"sequen",
+				"sequenceName"
+			],
+			[
+				"mat",
+				"matchingShot"
+			],
+			[
+				"opt",
+				"options"
+			],
+			[
+				"resp",
+				"response"
+			],
+			[
+				"auto",
+				"autoConversionCollection"
+			],
+			[
+				"outp",
+				"outputColorSpace"
+			],
+			[
+				"output",
+				"outputPath"
+			],
+			[
+				"comp",
+				"compRenderAssetType"
+			],
+			[
+				"greyLig",
+				"greyLightest"
+			],
+			[
+				"taskc",
+				"taskCollection"
+			],
+			[
+				"taskG",
+				"taskGroupID"
+			],
+			[
+				"taskgroup",
+				"taskGroupCollection"
+			],
+			[
+				"depar",
+				"departmentMatch"
+			],
+			[
+				"fix",
+				"fixUsers"
+			],
+			[
+				"baseN",
+				"baseNameLowerCase"
+			],
+			[
+				"hand",
+				"handlersAfter"
+			],
+			[
+				"handl",
+				"handlersBefore"
+			],
+			[
+				"shad",
+				"shadedBlocker"
+			],
+			[
+				"main",
+				"mainNavbar"
+			],
+			[
+				"brand",
+				"brandPrimary"
+			],
+			[
+				"sidebarham",
+				"sidebarHamburgerIndicatorColor"
+			],
+			[
+				"icon_ba",
+				"icon_barIndicator"
+			],
+			[
+				"subM",
+				"subMenuToggle"
+			],
+			[
+				"exte",
+				"extendEvents"
+			],
+			[
+				"sid",
+				"sidebar"
+			],
+			[
+				"side",
+				"sidebarNavView"
+			],
+			[
+				"navbarc",
+				"navbarTextColor"
+			],
+			[
+				"gre",
+				"greyDarker"
+			],
+			[
+				"spa",
+				"spacingSmall"
+			],
+			[
+				"serveropt",
+				"serverOptionsToSkip"
+			],
+			[
+				"serv",
+				"serverOptionsToSkip"
+			],
+			[
+				"_co",
+				"_collectValidOptions"
+			],
+			[
+				"templa",
+				"templateName"
+			],
+			[
+				"_data",
+				"_dataInfo"
+			],
+			[
+				"model",
+				"modelClassName"
+			],
+			[
+				"_da",
+				"_dataInfo"
+			],
+			[
+				"can",
+				"cannedListItem"
+			],
+			[
+				"class",
+				"classList"
+			],
+			[
+				"deleg",
+				"delegateEvents"
+			],
+			[
+				"und",
+				"undefined"
+			],
+			[
+				"dele",
+				"delegateEvents"
+			],
+			[
+				"ren",
+				"rendered"
+			],
+			[
+				"ata",
+				"attached"
+			],
+			[
+				"at",
+				"_attached"
+			],
+			[
+				"call",
+				"callback"
+			],
+			[
+				"ini",
+				"initialized"
+			],
+			[
+				"in",
+				"initPage"
+			],
+			[
+				"inig",
+				"initRegistry"
+			],
+			[
+				"entit",
+				"entitiesMenu"
+			],
+			[
+				"Formal",
+				"formalName"
+			],
+			[
+				"init",
+				"initialized"
+			],
+			[
+				"exist",
+				"existingComponents"
+			],
+			[
+				"m",
+				"mouseEvents"
+			],
+			[
+				"colect",
+				"collectionClassName"
+			],
+			[
+				"compone",
+				"componentName"
+			],
+			[
+				"ent",
+				"entity"
+			],
+			[
+				"existing",
+				"existingPages"
+			],
+			[
+				"existin",
+				"existingPages"
+			],
+			[
+				"exi",
+				"existingPages"
+			],
+			[
+				"res",
+				"results"
+			],
+			[
+				"cla",
+				"callback"
+			],
+			[
+				"getE",
+				"getEntityModel"
+			],
+			[
+				"defaul",
+				"defaultWidgets"
+			],
+			[
+				"_p",
+				"_pageInfo"
+			],
+			[
+				"update",
+				"updateDatabaseComponents"
+			],
+			[
+				"compo",
+				"componentsByID"
+			],
+			[
+				"coren_grid",
+				"coren_gridID"
+			],
+			[
+				"coren_g",
+				"coren_gridID"
+			],
+			[
+				"childv",
+				"childViews"
+			],
+			[
+				"getEnt",
+				"getEntityNameFromID"
+			],
+			[
+				"find",
+				"findMatch"
+			],
+			[
+				"entity",
+				"entityIDs"
+			],
+			[
+				"en",
+				"entityData"
+			],
+			[
+				"displ",
+				"displayFields"
+			],
+			[
+				"displayfi",
+				"displayFields"
+			],
+			[
+				"default",
+				"defaultOptions"
+			],
+			[
+				"entityDef",
+				"entityDefinitions"
+			],
+			[
+				"removeent",
+				"removeEntityDef"
+			],
+			[
+				"old",
+				"oldEntityType"
+			],
+			[
+				"entd",
+				"entityDefinitions"
+			],
+			[
+				"conte",
+				"contextGlobal"
+			],
+			[
+				"createE",
+				"createEntitiesFromDefinitions"
+			],
+			[
+				"Enti",
+				"EntityDefManager"
+			],
+			[
+				"dataTYp",
+				"dataType"
+			],
+			[
+				"proo",
+				"prototype"
+			],
+			[
+				"desc",
+				"descriptionFields"
+			],
+			[
+				"wra",
+				"wrappedCallback"
+			],
+			[
+				"ap",
+				"application"
+			],
+			[
+				"func",
+				"function"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"Template",
+				"TemplateManager"
+			],
+			[
+				"tempate",
+				"templateManager"
+			],
+			[
+				"Templ",
+				"TemplateManager"
+			],
+			[
+				"template",
+				"templateManager"
+			],
+			[
+				"database",
+				"database_dbMongo"
+			],
+			[
+				"ext",
+				"extension"
+			],
+			[
+				"comm",
+				"command"
+			],
+			[
+				"packag",
+				"packageManager"
+			],
+			[
+				"coren_",
+				"coren_testGlobals"
+			],
+			[
+				"objec",
+				"ObjectID"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "tryout/colors.py",
+			"settings":
+			{
+				"buffer_size": 857,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 860,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "tryout/tryout.py",
+			"settings":
+			{
+				"buffer_size": 4034,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 120.0,
+		"selected_items":
+		[
+			[
+				"sublime",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: clas",
+				"Snippet: New Class"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"open",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"file e",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"browse",
+				"Preferences: Browse Packages"
+			],
+			[
+				"package control",
+				"Package Control: Add Channel"
+			],
+			[
+				"Package Control: enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"packages",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 402.0
+	},
+	"console":
+	{
+		"height": 331.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": false,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/ie/tryout/tryout/tryout.py",
+		"/C/ie/translators/test/events.py",
+		"/C/ie/arkUtil/test/arkHelpersTest.py",
+		"/C/Users/IE/Desktop/Batches/downgradeCoren.bat",
+		"/C/ie/caretaker/shared/components/caretaker_grid/templates/caretaker_gridView.hogan",
+		"/C/ie/caretaker/client/styles/caretaker_variables.styl",
+		"/C/ie/caretaker/admin/requeueJobVersions.py",
+		"/C/ie/caretaker/client/styles/base.styl",
+		"/C/ie/caretaker/shared/components/caretaker_app/controllers/caretaker_router.js",
+		"/C/ie/caretaker/shared/components/caretaker_app/views/caretaker_appView.js",
+		"/C/GoogleDrive/Projects/snippets/python/qcFileList.py",
+		"/C/GoogleDrive/Projects/snippets/python/listFolders.py",
+		"/C/GoogleDrive/Projects/snippets/python/houdiniNukeExport.py",
+		"/C/GoogleDrive/Projects/snippets/python/makePlatesFolders.py",
+		"/C/GoogleDrive/Projects/snippets/python/findFilenameFromFile.py",
+		"/C/ie/caretaker/admin/requeueRecentVersions.py",
+		"/C/ie/caretaker/config/default.js",
+		"/C/ie/caretaker/server/entityDefinitions/autoConversion.entitydef",
+		"/C/ie/caretaker/admin/pauseCertainJob.py",
+		"/C/dev/xampp/htdocs/core/sql.php",
+		"/C/ie/caretaker/server/entityDefinitions/shot.entitydef",
+		"/C/dev/xampp/htdocs/core/defaults.php",
+		"/C/ie/ingenuity_site/reference/backend_editProjects.html",
+		"/C/ie/ingenuity_site/reference/backend_home.html",
+		"/C/ie/ingenuity_site/reference/backend_editHomepage.html",
+		"/C/ie/ingenuity_site/reference/backend_editWorkpage.html",
+		"/C/ie/caretaker/admin/removeShepherdJob.py",
+		"/C/ie/caretaker/shared/components/publish_app/views/publish_appView.js",
+		"/C/ie/caretaker/admin/findShepherdJob.py",
+		"/C/ie/caretaker/admin/removeOldJobs.py",
+		"/R/Geostorm/IO/dneg_sentElements_03_24.txt",
+		"/Q/Assets/LUTS/Notorious/v059.cube",
+		"/Q/Assets/LUTS/Notorious/v070_jason.cube",
+		"/Q/Assets/LUTS/Notorious/v072.cube",
+		"/R/Notorious_s01/IO/Pilot/color_tests/2016_04_11/4_SGamut3CineSLog3_To_Cine+709.cube",
+		"/R/Second_Fattest_Housewife_s01/IO/luts/AlexaV3_K1S1_LogC2Video_Rec709_EE_colorfront3d.3dmesh",
+		"/Q/Assets/LUTS/Notorious/v_071_jasonConverted.cube",
+		"/C/ie/caretaker/admin/requeueMissingVersions.py",
+		"/C/ie/caretaker/admin/createAllShots.py",
+		"/C/ie/caretaker/admin/addVersions.py",
+		"/C/ie/caretaker/server/scripts/addConvertedVersion.js",
+		"/C/Users/IE/Desktop/Batches/caretaker.bat",
+		"/C/ie/caretaker/server/scripts/convertCompRender.js",
+		"/C/ie/caretaker/admin/autopilot.py",
+		"/C/ie/caretaker/admin/countVersions.py",
+		"/C/ie/caretaker/admin/removeDuplicateVersions.py",
+		"/C/ie/caretaker/server/entityDefinitions/asset.entitydef",
+		"/C/Program Files/Unity/Editor/Data/CGIncludes/Lighting.cginc",
+		"/C/ie/caretaker/server/entityDefinitions/project.entitydef",
+		"/C/ie/caretaker/admin/requeueVersions.py",
+		"/C/ie/caretaker/admin/deleteRecentVersions.py",
+		"/C/ie/caretaker/server/entityDefinitions/version.entitydef",
+		"/C/GoogleDrive/Projects/snippets/unity/fogController.cs",
+		"/C/GoogleDrive/Projects/snippets/nuke/frameRangeAndLatest.py",
+		"/C/Users/IE/Desktop/Batches/autopilot.bat",
+		"/C/GoogleDrive/Projects/snippets/unity/uberBasic.cg",
+		"/C/Users/IE/Desktop/Batches/shepherd.bat",
+		"/R/yyy_fixConverters.bat",
+		"/C/ie/caretaker/todo.md",
+		"/R/Dr_Ken_s01/Workspaces/DRK_105/DRK_105_EXT_NIGHT/Comp/DRK_105_EXT_NIGHT_v003_tnm.nk",
+		"/R/zzzzzzzz_installTools_nodes_v004.bat",
+		"/C/dev/fabric/FabricEngine-2.0.0-Windows-x86_64/environment.sh",
+		"/C/ie/caretaker/shared/components/caretaker_app/templates/caretaker_navbarRightMenu.hogan",
+		"/C/ie/caretaker/shared/components/caretaker_app/views/index.js",
+		"/C/ie/caretaker/shared/components/caretaker_app/views/caretaker_navbarRightMenu.js",
+		"/C/ie/caretaker/shared/components/caretaker_grid/views/caretaker_gridView.js",
+		"/C/ie/caretaker/client/main.js",
+		"/C/ie/caretaker/server/entityDefinitions/shepherdJob.entitydef",
+		"/C/ie/caretaker/admin/fixDPXVersions.py",
+		"/C/ie/caretaker/server/entityDefinitions/log.entitydef",
+		"/C/ie/caretaker/server/entityDefinitions/settings.entitydef",
+		"/C/ie/caretaker/config/development.js",
+		"/C/ie/caretaker/server/entityDefinitions/user.entitydef",
+		"/C/ie/caretaker/shared/models/userModel.js",
+		"/C/ie/caretaker/config/test.js",
+		"/C/ie/caretaker/test/test_addScriptTokens.js",
+		"/C/ie/coren/test/test_scripts.js",
+		"/C/ie/caretaker/server/scripts/addScriptTokens.js",
+		"/C/ie/caretaker/server/scripts/index.js",
+		"/C/ie/caretaker/shared/models/index.js",
+		"/C/ie/coren/shared/models/index.js",
+		"/C/ie/caretaker/server/entityDefinitions/assetTag.entitydef",
+		"/C/ie/caretaker/test/autoConversionScript.js",
+		"/C/ie/caretaker/admin/redoVersions.py",
+		"/C/ie/caretaker/admin/createCompConvertScript.py",
+		"/C/ie/caretaker/server/entityDefinitions/sheep.entitydef",
+		"/C/ie/caretaker/admin/createAssetTypes.py",
+		"/C/ie/caretaker/admin/findShot.py",
+		"/R/zzz_updateNodes.bat",
+		"/R/zzz_installTools_v001.bat",
+		"/C/ie/config/default.json",
+		"/C/ie/caretaker/server/entityDefinitions/assetType.entitydef",
+		"/C/ie/caretaker/admin/importSql.js",
+		"/C/ie/caretaker/shared/components/caretaker_app/styles/caretaker_app.styl",
+		"/C/ie/caretaker/shared/components/index.js",
+		"/C/ie/caretaker/shared/components/caretaker_grid/package.json",
+		"/C/ie/caretaker/config/production.js",
+		"/C/ie/caretaker/server/scripts/versionForAutoConversion.js",
+		"/C/ie/caretaker/shared/components/publish_app/controllers/publish_router.js",
+		"/C/ie/caretaker/test/basicApp.js",
+		"/C/ie/caretaker/shared/components/publish_app/views/publish_selectionView.js",
+		"/C/ie/caretaker/shared/components/caretaker_calendar/views/caretaker_calendarView.js",
+		"/C/ie/shepherd/shepherd/__init__.py",
+		"/C/ie/shepherd/shepherd/submit/submit.py",
+		"/C/ie/coren/server/stringTemplate.js",
+		"/C/ie/shepherd/shepherd/server/databases/databaseInterface.js",
+		"/C/ie/caretaker/package.json",
+		"/C/ie/caretaker/server/entityDefinitions/autoConversion.entityDef",
+		"/C/ie/caretaker/client/styles/caretaker_common.styl",
+		"/C/ie/ark/programs/modo/configs/vray4modo.cfg",
+		"/C/ie/config/sheep.json",
+		"/R/zzz_installTools.bat",
+		"/C/ie/caretaker/server/scripts/createJobForCompRender.js",
+		"/C/Program Files/Chaos Group/V-Ray/MODO x64/vray4modo/901/index.cfg",
+		"/C/ie/caretaker/server/entityDefinitions/shepherdFrame.entitydef",
+		"/C/ie/caretaker/entities.md",
+		"/C/ie/caretaker/shared/components/caretaker_publish/caretaker_publishView.js",
+		"/C/GoogleDrive/Projects/pyside/JavascriptFromPython.py",
+		"/C/Users/IE/Desktop/jonathan_ssh_public",
+		"/C/Users/IE/Desktop/mm_Collect.py",
+		"/C/dev/caretaker/server/entityDefinitions/task.entitydef",
+		"/C/dev/caretaker/server/entityDefinitions/asset.entitydef",
+		"/C/dev/caretaker/server/entityDefinitions/note.entitydef",
+		"/C/dev/caretaker/server/entityDefinitions/taskGroup.entitydef",
+		"/C/dev/caretaker/server/entityDefinitions/shot.entitydef",
+		"/C/dev/caretaker/server/entityDefinitions/department.entitydef",
+		"/C/dev/caretaker/server/entityDefinitions/user.entitydef",
+		"/C/dev/caretaker/server/entityDefinitions/sequence.entitydef"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"<project>",
+			"C:\\dev\\coren\\test",
+			"<project>, !*.entityDef",
+			"<project>",
+			"C:\\dev\\coren\\build\\newSite",
+			"<project>",
+			"C:\\dev\\coren",
+			"<project>",
+			"C:\\dev\\grest\\bin",
+			"C:\\dev\\grest\\build",
+			"C:\\dev\\grest\\client",
+			"C:\\dev\\grest\\config",
+			"C:\\dev\\grest\\public",
+			"C:\\dev\\grest\\server",
+			"C:\\dev\\grest\\shared",
+			"C:\\dev\\grest\\test",
+			"C:\\dev\\grest\\shared",
+			"C:\\dev\\grest\\server",
+			"C:\\dev\\grest\\public",
+			"C:\\dev\\grest\\docs",
+			"C:\\dev\\grest\\config",
+			"C:\\dev\\grest\\client",
+			"C:\\dev\\grest\\build",
+			"C:\\dev\\grest\\bin",
+			"<project>",
+			"Q:\\USERS\\Grant_Miller\\dev\\tools\\Nuke",
+			"<project>",
+			"Q:\\USERS\\Grant_Miller\\dev\\tools\\Nuke"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"testFunction",
+			"'cyan', '='",
+			"suite",
+			"_isTestSuite",
+			"suites",
+			"moduleName",
+			"tests",
+			"classes",
+			"runFolder",
+			"runAll",
+			"Exception",
+			"Passed",
+			"failed",
+			"green",
+			"30",
+			"Tests",
+			"Running",
+			"self.timeoutTime",
+			"self.testNum",
+			"self.numTests",
+			"self.callback",
+			"self.methods",
+			"timeoutTime",
+			"thrownError",
+			"increment",
+			"testsComplete",
+			"shouldR",
+			"shouldRunA",
+			"bail",
+			"test",
+			"_finishTest",
+			"done",
+			"callback",
+			"someOtherTest",
+			"someTest",
+			"colors",
+			"blue",
+			"yellow",
+			"red",
+			"colored",
+			"Function",
+			"print",
+			"UNDERLINE",
+			"magenta",
+			"header",
+			"magenta",
+			"blue",
+			"header",
+			"HEADER",
+			"BOLD",
+			"ENDC",
+			"FAIL",
+			"WARNING",
+			"OKGREEN",
+			"OKBLUE",
+			"arkHelpers",
+			"arkHelpersTest",
+			"evenName",
+			"sel",
+			"callback",
+			"checkNodes",
+			"editselected",
+			".navbar",
+			".menu",
+			"coren_edit",
+			"textarea",
+			"240px",
+			"publish_appView",
+			"login",
+			"loginurl",
+			"notexists",
+			"errors",
+			"_.bindAll(",
+			"second",
+			"colorspaceLut",
+			"footageColorspace",
+			"colorspaceLut",
+			"latestVersion",
+			"applyCDL",
+			"conversion",
+			"alexaToRec709",
+			"checkbox",
+			"- ",
+			"addContrast",
+			"projectShots",
+			"exr_32bit",
+			"fileseq",
+			"version",
+			"highest",
+			"baseFieldedModel",
+			"fileupload",
+			"demonbanana",
+			"entity",
+			"project",
+			"name",
+			"in",
+			"status",
+			"paused",
+			"this",
+			".",
+			"frameRange",
+			"mismatched frame",
+			"running",
+			"trim",
+			"strip(",
+			"trim",
+			"asset",
+			"trim",
+			"shot",
+			"shotName",
+			"queued",
+			"'-'",
+			"'-' in shotName ",
+			"makeShot",
+			"versionPath",
+			"latestNukeScript",
+			"filePath",
+			"sequence",
+			"getNukeFrameRange",
+			"getFrameRange",
+			"getHighestVersion",
+			"highestFile",
+			"latest",
+			"path",
+			"unixPath",
+			"int(",
+			"lastFrame",
+			"firstFrame"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"caretaker_gridView",
+			"prores_4444",
+			"factory.getEntityCollection",
+			"registry.addClass('script', ",
+			"registry.addClass('router', ",
+			"registry.addClass('model', ",
+			"registry.addClass('view', ",
+			"$1$2:",
+			"$1$2: '$3'",
+			"$1$2:",
+			"$1$2: '$3'",
+			"require('coren/node_modules/arkutil')",
+			"require('arkutil')",
+			"\",",
+			"\"updateMethod\":",
+			"\",",
+			"this.timeout(10000)",
+			"/var/www",
+			"/\\l$1",
+			"/\\L$1$2",
+			"/$1\\L$2",
+			"/\\L$1$2",
+			"/$1U$2",
+			"baseAppView",
+			"(baseView",
+			"'baseView",
+			"baseView.extend(",
+			"/baseView')",
+			"var baseView",
+			"baseTemplateView",
+			"pluginManager\npluginManager",
+			"entityDefManager",
+			"basicApp",
+			"clientController",
+			".subMenuToggle",
+			"menuToggle",
+			"subMenu",
+			"$navbarBgColor",
+			"$lineHeight",
+			".icon_",
+			".icon_$1_",
+			".icon_$1_$2_",
+			".icon_$1_$2_$3_",
+			".icon_$1_$2_$3_$4_",
+			".icon_",
+			".icon_$1_",
+			".icon_$1_$2_",
+			".icon_$1_$2_$3_",
+			".icon_$1_$2_$3_$4_",
+			".icon_$2_$3_$4_$5_",
+			".$1_$2_$3_",
+			".$1_$2_$3",
+			"getChildViewsByKey",
+			"getLastChildView(",
+			"require('coren/shared/models/fields/BaseFieldModel')",
+			"{{>coren_header}}",
+			"testArea",
+			"'coren_",
+			".coren",
+			"basics.vendorIncludes}}",
+			"'link'",
+			"field.link",
+			"parse",
+			"enableFallback",
+			"'$1'",
+			"$1",
+			"./BaseFieldModel",
+			"Plugin",
+			"plugin",
+			"package.json",
+			"Plugin",
+			"plugin",
+			"roflcopter.json",
+			"package.json",
+			"Plugin",
+			"plugin",
+			"package",
+			"roflcopter.json",
+			"package.json",
+			"plugin",
+			"roflcopter.json",
+			"__corenPackage",
+			"packageSettings",
+			"Done testing, run callback",
+			"getRawData",
+			"rawData",
+			"isIDBased",
+			"$push",
+			"",
+			"updatedby",
+			"createdby",
+			"this.coren.manager.isValidID(this._rawData)",
+			"this.manager.isValidID(this._rawData)",
+			" manager.getFieldTypeFromIndex",
+			" manager.getDataTypeFromIndex",
+			" ",
+			"displayField",
+			"updatedBy",
+			"createdBy",
+			"formalName",
+			"fieldType",
+			"dataType",
+			"options",
+			"options:",
+			"realPathSync",
+			"backerClassName",
+			"backerDataType",
+			"require('coren/node_modules/lodash')",
+			".once(",
+			"coren.initEntities",
+			"nodeStyleCallback",
+			"coren",
+			"Coren",
+			"coren",
+			"Coren",
+			"coren",
+			"cOS",
+			"\\n},",
+			"\\n$1: function$2",
+			"},",
+			"$1: function($2)",
+			".$1",
+			"!== ",
+			"require('super-backbone')",
+			"require('hogan-updated')",
+			"\\",
+			"setSlateInfo",
+			"else:"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "tryout/colors.py",
+					"settings":
+					{
+						"buffer_size": 857,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								155,
+								155
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 860,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								102,
+								102
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"asi": true,
+								"bitwise": true,
+								"browser": true,
+								"evil": true,
+								"immed": true,
+								"latedef": true,
+								"multistr": true,
+								"noarg": true,
+								"node": true,
+								"noempty": true,
+								"plusplus": true,
+								"smarttabs": true,
+								"trailing": true,
+								"undef": true,
+								"unused": true
+							},
+							"pep8": false,
+							"pep8_ignore":
+							[
+								"W191"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": true,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "tryout/tryout.py",
+					"settings":
+					{
+						"buffer_size": 4034,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2242,
+								2242
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"asi": true,
+								"bitwise": true,
+								"browser": true,
+								"evil": true,
+								"immed": true,
+								"latedef": true,
+								"multistr": true,
+								"noarg": true,
+								"node": true,
+								"noempty": true,
+								"plusplus": true,
+								"smarttabs": true,
+								"trailing": true,
+								"undef": true,
+								"unused": true
+							},
+							"pep8": false,
+							"pep8_ignore":
+							[
+								"W191"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": true,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 116.0,
+						"translation.y": 1122.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.exec":
+	{
+		"height": 1028.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"event",
+				"translators/EventListener.py"
+			],
+			[
+				"tran.py",
+				"translators/Translator.py"
+			],
+			[
+				"tran/nuke",
+				"translators/Nuke.py"
+			],
+			[
+				"requeue",
+				"admin/requeueJobVersions.py"
+			],
+			[
+				"vari",
+				"client/styles/caretaker_variables.styl"
+			],
+			[
+				"publish_appview",
+				"shared/components/publish_app/views/publish_appView.js"
+			],
+			[
+				"defa",
+				"config/default.js"
+			],
+			[
+				"reque",
+				"admin/requeueJobVersions.py"
+			],
+			[
+				"carerout",
+				"shared/components/caretaker_app/controllers/caretaker_router.js"
+			],
+			[
+				"convers",
+				"server/entityDefinitions/autoConversion.entitydef"
+			],
+			[
+				"autocon",
+				"server/entityDefinitions/autoConversion.entitydef"
+			],
+			[
+				"autoc",
+				"server/entityDefinitions/autoConversion.entitydef"
+			],
+			[
+				"autoconv",
+				"server/entityDefinitions/autoConversion.entitydef"
+			],
+			[
+				"shot.ent",
+				"server/entityDefinitions/shot.entitydef"
+			],
+			[
+				"run",
+				"admin/requeueJobVersions.py"
+			],
+			[
+				"versi",
+				"server/entityDefinitions/version.entitydef"
+			],
+			[
+				"adshot",
+				"admin/createAllShots.py"
+			],
+			[
+				"requeu",
+				"admin/requeueMissingVersions.py"
+			],
+			[
+				"scrip/",
+				"server/scripts/addConvertedVersion.js"
+			],
+			[
+				"createshots",
+				"admin/createAllShots.py"
+			],
+			[
+				"pausecer",
+				"admin/pauseCertainJob.py"
+			],
+			[
+				"admin/mod",
+				"admin/removeOldJobs.py"
+			],
+			[
+				"admin/",
+				"admin/countVersions.py"
+			],
+			[
+				"scripts/",
+				"server/scripts/convertCompRender.js"
+			],
+			[
+				"script/ad",
+				"server/scripts/addConvertedVersion.js"
+			],
+			[
+				"adver",
+				"admin/addVersions.py"
+			],
+			[
+				"todo",
+				"todo.md"
+			],
+			[
+				"project",
+				"server/entityDefinitions/project.entitydef"
+			],
+			[
+				"recent",
+				"admin/deleteRecentVersions.py"
+			],
+			[
+				"addversion",
+				"admin/addVersions.py"
+			],
+			[
+				"auti",
+				"admin/autopilot.py"
+			],
+			[
+				"proj",
+				"server/entityDefinitions/project.entitydef"
+			],
+			[
+				"projec",
+				"server/entityDefinitions/project.entitydef"
+			],
+			[
+				"convert",
+				"server/scripts/convertCompRender.js"
+			],
+			[
+				"carerouter",
+				"shared/components/caretaker_app/controllers/caretaker_router.js"
+			],
+			[
+				"entdef",
+				"server/entityDefinitions/asset.entitydef"
+			],
+			[
+				"add",
+				"admin/addVersions.py"
+			],
+			[
+				"addver",
+				"admin/addVersions.py"
+			],
+			[
+				"create",
+				"admin/createAllShots.py"
+			],
+			[
+				"shepjob",
+				"server/entityDefinitions/shepherdJob.entitydef"
+			],
+			[
+				"caregdi",
+				"shared/components/caretaker_grid/views/caretaker_gridView.js"
+			],
+			[
+				"find",
+				"admin/findShepherdJob.py"
+			],
+			[
+				"shephjob",
+				"server/entityDefinitions/shepherdJob.entitydef"
+			],
+			[
+				"m",
+				"client/main.js"
+			],
+			[
+				"caregrview.ho",
+				"shared/components/caretaker_grid/templates/caretaker_gridView.hogan"
+			],
+			[
+				"createal",
+				"admin/createAllShots.py"
+			],
+			[
+				"gridview.hogan",
+				"shared/components/caretaker_grid/templates/caretaker_gridView.hogan"
+			],
+			[
+				"gridview.js",
+				"shared/components/caretaker_grid/views/caretaker_gridView.js"
+			],
+			[
+				"carenavbar",
+				"shared/components/caretaker_app/templates/caretaker_navbarRightMenu.hogan"
+			],
+			[
+				"careapview.js",
+				"shared/components/caretaker_app/views/caretaker_appView.js"
+			],
+			[
+				"pause",
+				"admin/pauseCertainJob.py"
+			],
+			[
+				"settings.",
+				"server/entityDefinitions/settings.entitydef"
+			],
+			[
+				"ser/man",
+				"shared/components/caretaker_app/templates/caretaker_navbarRightMenu.hogan"
+			],
+			[
+				"adconv",
+				"server/scripts/addConvertedVersion.js"
+			],
+			[
+				"",
+				"admin/findShepherdJob.py"
+			],
+			[
+				"findshe",
+				"admin/findShepherdJob.py"
+			],
+			[
+				"log",
+				"server/entityDefinitions/log.entitydef"
+			],
+			[
+				"caregdiview.js",
+				"shared/components/caretaker_grid/views/caretaker_gridView.js"
+			],
+			[
+				"con/def",
+				"config/default.js"
+			],
+			[
+				"user",
+				"shared/models/userModel.js"
+			],
+			[
+				"useren",
+				"server/entityDefinitions/user.entitydef"
+			],
+			[
+				"devel",
+				"config/development.js"
+			],
+			[
+				"carapview",
+				"shared/components/caretaker_app/views/caretaker_appView.js"
+			],
+			[
+				"usermod",
+				"/C/ie/coren/shared/models/userModel.js"
+			],
+			[
+				"con",
+				"server/entityDefinitions/autoConversion.entitydef"
+			],
+			[
+				"v",
+				"server/entityDefinitions/version.entitydef"
+			],
+			[
+				"caregriview",
+				"shared/components/caretaker_grid/views/caretaker_gridView.js"
+			],
+			[
+				"careapview",
+				"shared/components/caretaker_app/views/caretaker_appView.js"
+			],
+			[
+				"assettag",
+				"server/entityDefinitions/assetTag.entitydef"
+			],
+			[
+				"cli/st",
+				"client/styles/base.styl"
+			],
+			[
+				"user.e",
+				"server/entityDefinitions/user.entitydef"
+			],
+			[
+				"apvie",
+				"shared/components/caretaker_app/views/caretaker_appView.js"
+			],
+			[
+				"projen",
+				"server/entityDefinitions/project.entitydef"
+			],
+			[
+				"care/rout",
+				"shared/components/caretaker_app/controllers/caretaker_router.js"
+			],
+			[
+				"conf/defa",
+				"config/default.js"
+			],
+			[
+				"main",
+				"client/main.js"
+			],
+			[
+				"reatecon",
+				"admin/createCompConvertScript.py"
+			],
+			[
+				"convercomp",
+				"server/scripts/convertCompRender.js"
+			],
+			[
+				"caregr",
+				"shared/components/caretaker_grid/views/caretaker_gridView.js"
+			],
+			[
+				"veren",
+				"server/entityDefinitions/version.entitydef"
+			],
+			[
+				"apview",
+				"shared/components/caretaker_app/views/caretaker_appView.js"
+			],
+			[
+				"shoten",
+				"server/entityDefinitions/shot.entitydef"
+			],
+			[
+				"shep.ent",
+				"server/entityDefinitions/sheep.entitydef"
+			],
+			[
+				"router",
+				"shared/components/caretaker_app/controllers/caretaker_router.js"
+			],
+			[
+				"ver",
+				"server/entityDefinitions/version.entitydef"
+			],
+			[
+				"a",
+				"server/entityDefinitions/asset.entitydef"
+			],
+			[
+				"addconver",
+				"server/scripts/addConvertedVersion.js"
+			],
+			[
+				"sheep",
+				"server/entityDefinitions/sheep.entitydef"
+			],
+			[
+				"autoconver",
+				"server/entityDefinitions/autoConversion.entitydef"
+			],
+			[
+				"base.styl",
+				"client/styles/base.styl"
+			],
+			[
+				"caretaker_",
+				"shared/components/caretaker_app/styles/caretaker_app.styl"
+			],
+			[
+				"caretak_apview.js",
+				"shared/components/caretaker_app/views/caretaker_appView.js"
+			],
+			[
+				"version",
+				"server/entityDefinitions/version.entitydef"
+			],
+			[
+				"asent",
+				"server/entityDefinitions/asset.entitydef"
+			],
+			[
+				"astype",
+				"server/entityDefinitions/assetType.entitydef"
+			],
+			[
+				"auto",
+				"server/entityDefinitions/autoConversion.entitydef"
+			],
+			[
+				"corenrouter",
+				"shared/components/caretaker_app/controllers/caretaker_router.js"
+			],
+			[
+				"script/",
+				"server/scripts/versionForAutoConversion.js"
+			],
+			[
+				"impor",
+				"admin/importSql.js"
+			],
+			[
+				"asset",
+				"server/entityDefinitions/asset.entitydef"
+			],
+			[
+				"createjob",
+				"server/scripts/createJobForCompRender.js"
+			],
+			[
+				"assettype",
+				"server/entityDefinitions/assetType.entitydef"
+			],
+			[
+				"sho",
+				"server/entityDefinitions/shot.entitydef"
+			],
+			[
+				"shep",
+				"server/entityDefinitions/shepherdJob.entitydef"
+			],
+			[
+				"package",
+				"package.json"
+			],
+			[
+				"script/createjob",
+				"server/scripts/createJobForCompRender.js"
+			],
+			[
+				"shot",
+				"server/entityDefinitions/shot.entitydef"
+			],
+			[
+				"as",
+				"server/entityDefinitions/asset.entitydef"
+			],
+			[
+				"carecom",
+				"client/styles/caretaker_common.styl"
+			],
+			[
+				"variables",
+				"client/styles/caretaker_variables.styl"
+			],
+			[
+				"publishrout",
+				"shared/components/publish_app/controllers/publish_router.js"
+			],
+			[
+				"caretak",
+				"client/styles/caretaker_common.styl"
+			],
+			[
+				"package.j",
+				"package.json"
+			],
+			[
+				"ase",
+				"server/entityDefinitions/asset.entitydef"
+			],
+			[
+				"careta",
+				"shared/components/caretaker_app/controllers/caretaker_router.js"
+			],
+			[
+				"task",
+				"server/entityDefinitions/task.entitydef"
+			],
+			[
+				"taskgroup",
+				"server/entityDefinitions/taskGroup.entitydef"
+			],
+			[
+				"note",
+				"server/entityDefinitions/note.entitydef"
+			],
+			[
+				"dep",
+				"server/entityDefinitions/department.entitydef"
+			],
+			[
+				"department",
+				"server/entityDefinitions/department.entitydef"
+			],
+			[
+				"sequence",
+				"server/entityDefinitions/sequence.entitydef"
+			],
+			[
+				"user.en",
+				"server/entityDefinitions/user.entitydef"
+			],
+			[
+				"care",
+				"shared/components/caretaker_app/views/caretaker_appView.js"
+			],
+			[
+				"coren_calen",
+				"shared/components/caretaker_calendar/styles/caretaker_calendar.styl"
+			],
+			[
+				"caretaker_apview",
+				"shared/components/caretaker_app/views/caretaker_appView.js"
+			],
+			[
+				"defau",
+				"config/default.js"
+			],
+			[
+				"config",
+				"client/compiled/config.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"trans",
+				"/C/ie/translators/translators.sublime-project"
+			],
+			[
+				"coren",
+				"/C/ie/coren/coren.sublime-project"
+			],
+			[
+				"caretaker",
+				"/C/dev/caretaker/caretaker.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 204.0,
+	"status_bar_visible": false
+}
