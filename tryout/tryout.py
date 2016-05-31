@@ -1,4 +1,5 @@
 import os
+import sys
 import inspect
 from colors import colors
 import time
@@ -89,21 +90,33 @@ class TestSuite(object):
 
 		# run the test w/ tearDown as the callback
 		def runTest():
+			# the callback is optional, so we try to pass it
+			# first, then catch the argument error and try it
+			# without the callback
+			hasCallback = len(
+				inspect.getargspec(testFunction).args) > 1
+			erroredOnFunction = True
 			try:
-				# the callback is optional, so we try to pass it
-				# first, then catch the argument error and try it
-				# without the callback
-				hasCallback = len(
-					inspect.getargspec(testFunction).args) > 1
 				if hasCallback:
 					testFunction(tearDown)
 				else:
 					testFunction()
+					erroredOnFunction = False
 					tearDown()
 			except Exception as err:
 				if self.bail:
 					colors('red', '\nError:\n')
-					raise err
+					# try to run the tearDown even though we've
+					# errored
+					if erroredOnFunction:
+						tearDown()
+					if hasattr(err, 'message') and \
+						'\n' not in err.message:
+						print traceback.format_exc()
+						sys.exit()
+					else:
+						raise err
+				# if we're not bailing, just handle the error
 				self._handleError(err, traceback.format_exc(), caughtException=True)
 
 		# run the setUp function w/ optional callback
