@@ -13,7 +13,14 @@ class TestSuite(object):
 	_lineLength = 50
 	_lineColor = 'cyan'
 	_isTestSuite = True
-	_ignore = ['run', 'setUp', 'tearDown', 'assertEqual', 'assertTrue']
+	_ignore = [
+		'run',
+		'setUp',
+		'tearDown',
+		'assertEqual',
+		'assertTrue',
+		'assertIn'
+	]
 
 	title = 'Generic Tests'
 
@@ -24,12 +31,16 @@ class TestSuite(object):
 		self._methods = [method[0] for method in self._methods if method[0] not in self._ignore and method[0][0] != '_']
 
 	def assertEqual(self, a, b):
-		if a != b:
+		if not a == b:
 			raise Exception(str(a) + ' != ' + str(b))
 
 	def assertTrue(self, a):
 		if not a:
 			raise Exception(str(a) + ' != True')
+
+	def assertIn(self, a, b):
+		if not a in b:
+			raise Exception(str(a) + ' not in ' + str(b))
 
 	def _handleError(self, err=None, execInfo=None, caughtException=False):
 		if not err:
