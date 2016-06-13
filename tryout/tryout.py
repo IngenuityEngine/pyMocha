@@ -113,10 +113,13 @@ class TestSuite(object):
 		# if it's not been called, error out
 		def waitOnTest():
 			startTime = time.time()
+			firstLoop = True
 			while time.time() < startTime + self.timeout and \
 				not self.callbackCalled:
-				print 'Waiting on callback'
+				if not firstLoop:
+					print 'Waiting on callback'
 				time.sleep(1)
+				firstLoop = False
 
 			# if we're out of the loop and the callback still
 			# hasn't been called we've timed out and should bail
