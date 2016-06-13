@@ -4,11 +4,11 @@ import inspect
 from colors import colors
 import time
 import traceback
+import threading
 import imp
 
 class TestSuite(object):
-	timeout = 5000
-	_timeoutTime = 9999999999
+	timeout = 5
 	_errors = 0
 	_lineLength = 50
 	_lineColor = 'cyan'
@@ -85,11 +85,18 @@ class TestSuite(object):
 		# run the tearDown function w/ optional callback
 		# when tearDown is done, call _finishTest
 		def tearDown():
+			self.callbackCalled = True
 			try:
 				hasCallback = len(
 					inspect.getargspec(self.tearDown).args) > 1
 				if hasCallback:
-					self.tearDown(self._finishTest)
+					self.callbackCalled = False
+					functionThread = threading.Thread(
+						target=startThread,
+						args=(self.tearDown, self._finishTest)
+						)
+					functionThread.start()
+					waitOnTest()
 				else:
 					self.tearDown()
 					self._finishTest()
@@ -99,27 +106,51 @@ class TestSuite(object):
 					raise err
 				self._handleError(err, traceback.format_exc(), caughtException=True)
 
+		def startThread(func, callback):
+			func(callback)
+
+		# wait on the callback to be called
+		# if it's not been called, error out
+		def waitOnTest():
+			startTime = time.time()
+			while time.time() < startTime + self.timeout and \
+				not self.callbackCalled:
+				print 'Waiting on callback'
+				time.sleep(1)
+
+			# if we're out of the loop and the callback still
+			# hasn't been called we've timed out and should bail
+			if not self.callbackCalled:
+				raise Exception('Test timed out after ' +
+					str(self.timeout) + ' seconds')
+
 		# run the test w/ tearDown as the callback
 		def runTest():
-			# the callback is optional, so we try to pass it
-			# first, then catch the argument error and try it
-			# without the callback
+			# the callback is optional so we check if this test
+			# needs one
 			hasCallback = len(
 				inspect.getargspec(testFunction).args) > 1
-			erroredOnFunction = True
+
+			erroredOnTest = True
 			try:
 				if hasCallback:
-					testFunction(tearDown)
+					self.callbackCalled = False
+					functionThread = threading.Thread(
+						target=startThread,
+						args=(testFunction, tearDown)
+						)
+					functionThread.start()
+					waitOnTest()
 				else:
 					testFunction()
-					erroredOnFunction = False
+					erroredOnTest = False
 					tearDown()
 			except Exception as err:
 				if self.bail:
 					colors('red', '\nError:\n')
 					# try to run the tearDown even though we've
 					# errored
-					if erroredOnFunction:
+					if erroredOnTest:
 						tearDown()
 					if hasattr(err, 'message') and \
 						'\n' not in err.message:
@@ -135,7 +166,13 @@ class TestSuite(object):
 			hasCallback = len(
 					inspect.getargspec(self.setUp).args) > 1
 			if hasCallback:
-				self.setUp(runTest)
+				self.callbackCalled = False
+				functionThread = threading.Thread(
+					target=startThread,
+					args=(self.setUp, runTest)
+					)
+				functionThread.start()
+				waitOnTest()
 			else:
 				self.setUp()
 				runTest()
@@ -160,11 +197,14 @@ class TestSuite(object):
 		self._errors = 0
 		self._numTests = len(self._methods)
 
-		while self._testNum < self._numTests and \
-			time.time() < self._timeoutTime:
-			startingErrors = self._errors
-			self._timeoutTime = time.time() + self.timeout
+		self._runningTests = True
 
+		while self._testNum < self._numTests:
+			startingErrors = self._errors
+
+			# update the start time so self._timeoutThread
+			# doesn't error out
+			self._startTime = time.time()
 			methodName = self._methods[self._testNum] \
 				.replace('_', ' ')
 
@@ -178,6 +218,7 @@ class TestSuite(object):
 			else:
 				colors('green', ' Passed')
 
+		self._runningTests = False
 		colors('cyan','\n\n Results:')
 		colors(self._lineColor, '=' * self._lineLength)
 		passed = self._numTests - self._errors
