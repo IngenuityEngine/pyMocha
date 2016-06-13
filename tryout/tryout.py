@@ -9,6 +9,7 @@ import imp
 
 class TestSuite(object):
 	timeout = 5
+	_timeoutCheckin = .1
 	_errors = 0
 	_lineLength = 50
 	_lineColor = 'cyan'
@@ -114,11 +115,12 @@ class TestSuite(object):
 		def waitOnTest():
 			startTime = time.time()
 			calls = 0
+			callsPerPrint = 1 / self._timeoutCheckin
 			while time.time() < startTime + self.timeout and \
 				not self.callbackCalled:
-				if calls > 0 and calls % 10 == 0:
+				if calls > 0 and calls % callsPerPrint == 0:
 					print 'Waiting on callback'
-				time.sleep(.1)
+				time.sleep(self._timeoutCheckin)
 				calls += 1
 
 			# if we're out of the loop and the callback still
