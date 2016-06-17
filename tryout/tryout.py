@@ -249,7 +249,9 @@ def runFolder(path):
 
 	files = os.listdir(root)
 	for f in files:
-		if f == '__main__.py' or f[0] == '.' or f[-2:] != 'py':
+		if f[0] == '.' or \
+			f[-2:] != 'py' or \
+			f[0] == '_':
 			continue
 		moduleName = f.split('.')[0]
 		modulePath = os.path.join(root, f)
