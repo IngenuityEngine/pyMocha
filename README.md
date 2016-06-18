@@ -53,3 +53,4 @@ Then run:
 To Do
 - [ ] add suite time
 - [ ] add summary for all suites
+- [x] add summary for folder (runFolder)
