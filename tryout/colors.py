@@ -22,7 +22,6 @@ def main():
 	print colors.blue + 'blue' + colors.end
 	print colors.magenta + 'magenta' + colors.end
 	print colors.cyan + 'cyan' + colors.end
-
 	print '\nColored:'
 	colors('red', 'red')
 	colors('green', 'green')
