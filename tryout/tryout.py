@@ -288,7 +288,7 @@ def run(test, callback=None, *args, **kwargs):
 
 	if not error:
 		try:
-			passed, failed, errors, failedMethod = suite.run(callback)
+			passed, failed, errMessage, failedMethod = suite.run(callback)
 		except Exception as err:
 			error = err
 
@@ -301,7 +301,7 @@ def run(test, callback=None, *args, **kwargs):
 	if error:
 		raise error
 	else:
-		return (passed, failed, errors, failedMethod)
+		return (passed, failed, errMessage, failedMethod)
 
 def runFolder(path):
 	root = os.path.dirname(path)
@@ -331,7 +331,7 @@ def runFolder(path):
 	# Folder summary
 	folder = os.path.split(root)[1]
 	colors('blue', '\n\n Folder Summary:', colors.end + root)
-	colors('blue', '=' * TestSuite._lineLength)
+	colors('blue', '=' * TestSuite._lineLength + '\n')
 	success = True
 	for result in results:
 		testPath = os.path.join(folder, result[0])
