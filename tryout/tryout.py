@@ -17,7 +17,9 @@ class TestSuite(object):
 	_ignore = [
 		'run',
 		'setUp',
+		'setUpClass',
 		'tearDown',
+		'tearDownClass',
 		'assertEqual',
 		'assertTrue',
 		'assertIn'
@@ -187,10 +189,28 @@ class TestSuite(object):
 				raise err
 			self._handleError(err, traceback.format_exc(), caughtException=True)
 
+	def setUpClass(self):
+		'''
+		Run before the entire suite runs
+		'''
+		pass
+
 	def setUp(self):
+		'''
+		Run before each test
+		'''
+		pass
+
+	def tearDownClass(self):
+		'''
+		Run after the entire suite runs
+		'''
 		pass
 
 	def tearDown(self):
+		'''
+		Run after each test
+		'''
 		pass
 
 	# Returns a tuple of number of tests passed
@@ -259,8 +279,27 @@ class TestSuite(object):
 
 def run(test, callback=None, *args, **kwargs):
 	suite = test(*args, **kwargs)
-	passed, failed, error, failedMethod = suite.run(callback)
-	return (passed, failed, error, failedMethod)
+
+	error = None
+	try:
+		suite.setUpClass()
+	except Exception as err:
+		error = err
+
+	if not error:
+		try:
+			suite.run(callback)
+		except Exception as err:
+			error = err
+
+	if not error:
+		try:
+			suite.tearDownClass()
+		except Exception as err:
+			error = err
+
+	if error:
+		raise error
 
 def runFolder(path):
 	root = os.path.dirname(path)
