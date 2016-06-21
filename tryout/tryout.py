@@ -288,7 +288,7 @@ def run(test, callback=None, *args, **kwargs):
 
 	if not error:
 		try:
-			suite.run(callback)
+			passed, failed, errors, failedMethod = suite.run(callback)
 		except Exception as err:
 			error = err
 
@@ -300,6 +300,8 @@ def run(test, callback=None, *args, **kwargs):
 
 	if error:
 		raise error
+	else:
+		return (passed, failed, errors, failedMethod)
 
 def runFolder(path):
 	root = os.path.dirname(path)
