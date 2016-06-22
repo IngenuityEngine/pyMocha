@@ -84,7 +84,6 @@ class TestSuite(object):
 
 	def _runTest(self):
 		testFunction = getattr(self, self._methods[self._testNum])
-
 		# run the tearDown function w/ optional callback
 		# when tearDown is done, call _finishTest
 		def tearDown():
@@ -161,8 +160,9 @@ class TestSuite(object):
 						tearDown()
 					if hasattr(err, 'message') and \
 						'\n' not in err.message:
-						print traceback.format_exc()
-						sys.exit()
+						trace = traceback.format_exc()
+						print trace
+						sys.exit(trace)
 					else:
 						raise err
 				# if we're not bailing, just handle the error
@@ -213,6 +213,10 @@ class TestSuite(object):
 		'''
 		pass
 
+	# Returns a tuple of number of tests passed
+	#					 number of tests failed
+	#					 if failure, error message
+	#					 if failure, failed method
 	def run(self, callback=None):
 		colors('magenta', '\n\n Suite:', colors.end + self.title)
 		colors('magenta', '=' * self._lineLength)
@@ -236,7 +240,18 @@ class TestSuite(object):
 			colors('cyan', '\n Test:', colors.end + methodName)
 			colors(self._lineColor, '=' * self._lineLength)
 
-			self._runTest()
+			# Try _runTest() and catch any exceptions
+			# BaseExceptions are caught to include sys.exit()
+			# Exceptions are processed for summary output and re-raised
+			try:
+				self._runTest()
+			except BaseException as err:
+				# self._errors only incremented if bail=False, in _handleError,
+				# incremement here if bail=True
+				self._errors += 1
+				passed = self._testNum - self._errors
+				failed = self._errors
+				return (passed, failed, err.message, methodName)
 
 			if self._errors > startingErrors:
 				colors('red', '\n Failed')
@@ -247,18 +262,20 @@ class TestSuite(object):
 		colors('cyan','\n\n Results:')
 		colors(self._lineColor, '=' * self._lineLength)
 		passed = self._numTests - self._errors
-		passed = str(passed) + ' passed'
+		msgPassed = str(passed) + ' passed'
 		failed = self._errors
-		failed = str(failed) + ' failed'
+		msgFailed = str(failed) + ' failed'
 		title = '    ' + self.title + ':' + colors.end
 		if self._errors > 0:
-			colors('red', title, passed + ',', failed)
+			colors('red', title, msgPassed + ',', msgFailed)
 		else:
-			colors('green', title, passed)
+			colors('green', title, msgPassed)
 		colors(self._lineColor, '=' * self._lineLength)
 
 		if self._callback:
 			self._callback(None)
+
+		return (passed, failed, None, None)
 
 def run(test, callback=None, *args, **kwargs):
 	suite = test(*args, **kwargs)
@@ -271,7 +288,7 @@ def run(test, callback=None, *args, **kwargs):
 
 	if not error:
 		try:
-			suite.run(callback)
+			passed, failed, errMessage, failedMethod = suite.run(callback)
 		except Exception as err:
 			error = err
 
@@ -283,12 +300,20 @@ def run(test, callback=None, *args, **kwargs):
 
 	if error:
 		raise error
+	else:
+		return (passed, failed, errMessage, failedMethod)
 
-
+# Function: runFolder
+# Runs all test files within folder specified at path
+# Prints per-folder summary after running all tests
+# Inputs: path to folder
+# Outputs: returns tuple of compiled information with number of files tested, total passed, total failed
 def runFolder(path):
 	root = os.path.dirname(path)
-
+	print 'running Folder'
 	files = os.listdir(root)
+	# testResults, a list of tuples, storing the testfile name, numPassed, numFailed, for all testfiles in a folder
+	testResults = []
 	for f in files:
 		if f[0] == '.' or \
 			f[-2:] != 'py' or \
@@ -299,9 +324,45 @@ def runFolder(path):
 		mod = imp.load_source(moduleName, modulePath)
 		# get all the test suites for a given file
 		suites = [getattr(mod, c) for c in dir(mod) if hasattr(getattr(mod, c), '_isTestSuite')]
-		for suite in suites:
-			run(suite)
 
+		totalPassed = 0
+		totalFailed = 0
+		for suite in suites:
+			passed, failed, error, failedMethod = run(suite)
+			totalPassed += passed
+			totalFailed += failed
+		testResults.append((f, totalPassed, totalFailed, error, failedMethod))
+
+	# Folder summary
+	folder = os.path.split(root)[1]
+	colors('blue', '\n\n Folder Summary:', colors.end + root)
+	colors('blue', '=' * TestSuite._lineLength + '\n')
+	success = True
+
+	folderFiles = len(testResults)
+	folderPassed = 0
+	folderFailed = 0
+
+	for result in testResults:
+		testPath = os.path.join(folder, result[0])
+		testPassed = result[1]
+		testFailed = result[2]
+		testError = result[3]
+		testMethod = result[4]
+		if testFailed > 0:
+			colors('red', testPath + colors.end + ': ' + str(testPassed) + ' passed, ' + str(testFailed) + ' failed\n')
+			success = False
+			print 'Failing on test '+ testMethod + ' with:'
+			colors('red', '\nError:\n')
+			print testError
+		else:
+			colors('green', testPath + colors.end + ': ' + str(testPassed) + ' passed\n')
+		# update folderResults information
+		folderPassed += testPassed
+		folderFailed += testFailed
+	if success:
+		print('All tests passed.\n')
+	return folderFiles, folderPassed, folderFailed
 
 def main():
 	class testStuff(TestSuite):
@@ -328,7 +389,6 @@ def main():
 
 	print 'Tryout bails on error by default'
 	run(testStuff)
-
 
 if __name__ == '__main__':
 	main()
