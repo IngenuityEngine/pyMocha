@@ -152,6 +152,7 @@ class TestSuite(object):
 					erroredOnTest = False
 					tearDown()
 			except Exception as err:
+				trace = traceback.format_exc()
 				if self.bail:
 					colors('red', '\nError:\n')
 					# try to run the tearDown even though we've
@@ -160,7 +161,6 @@ class TestSuite(object):
 						tearDown()
 					if hasattr(err, 'message') and \
 						'\n' not in err.message:
-						trace = traceback.format_exc()
 						print trace
 						sys.exit(trace)
 					else:
@@ -306,9 +306,9 @@ def run(test, callback=None, *args, **kwargs):
 # Function: runFolder
 # Runs all test files within folder specified at path
 # Prints per-folder summary after running all tests
-# Inputs: path to folder
+# Inputs: path to folder, callback (for bail=True/False)
 # Outputs: returns tuple of compiled information with number of files tested, total passed, total failed
-def runFolder(path):
+def runFolder(path, callback=None):
 	root = os.path.dirname(path)
 	print 'running Folder'
 	files = os.listdir(root)
@@ -328,7 +328,7 @@ def runFolder(path):
 		totalPassed = 0
 		totalFailed = 0
 		for suite in suites:
-			passed, failed, error, failedMethod = run(suite)
+			passed, failed, error, failedMethod = run(suite, callback)
 			totalPassed += passed
 			totalFailed += failed
 		testResults.append((f, totalPassed, totalFailed, error, failedMethod))

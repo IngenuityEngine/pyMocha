@@ -1,1 +1,1 @@
-from tryout import TestSuite, run, runFolder
+from tryout import TestSuite, run, runFolder, colors
