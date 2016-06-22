@@ -251,7 +251,7 @@ class TestSuite(object):
 				self._errors += 1
 				passed = self._testNum - self._errors
 				failed = self._errors
-				return (passed, failed, err.message, methodName)
+				return (passed, failed, err, methodName)
 
 			if self._errors > startingErrors:
 				colors('red', '\n Failed')
@@ -275,10 +275,12 @@ class TestSuite(object):
 		if self._callback:
 			self._callback(None)
 
+		# print ('TestSuite bail is ' + TestSuite.suiteBail)
+		# Returned if bail=False or all tests passed without error
 		return (passed, failed, None, None)
 
-def run(test, callback=None, *args, **kwargs):
-	suite = test(*args, **kwargs)
+def run(test, callback=None, bail=True):
+	suite = test(bail)
 
 	error = None
 	try:
@@ -288,7 +290,7 @@ def run(test, callback=None, *args, **kwargs):
 
 	if not error:
 		try:
-			passed, failed, errMessage, failedMethod = suite.run(callback)
+			passed, failed, failedErr, failedMethod = suite.run(callback)
 		except Exception as err:
 			error = err
 
@@ -301,14 +303,15 @@ def run(test, callback=None, *args, **kwargs):
 	if error:
 		raise error
 	else:
-		return (passed, failed, errMessage, failedMethod)
+		return (passed, failed, failedErr, failedMethod)
 
 # Function: runFolder
 # Runs all test files within folder specified at path
 # Prints per-folder summary after running all tests
 # Inputs: path to folder, callback (for bail=True/False)
 # Outputs: returns tuple of compiled information with number of files tested, total passed, total failed
-def runFolder(path, callback=None):
+# includes error and method bailed on if bail=True
+def runFolder(path, callback=None, bail=True):
 	root = os.path.dirname(path)
 	print 'running Folder'
 	files = os.listdir(root)
@@ -327,11 +330,18 @@ def runFolder(path, callback=None):
 
 		totalPassed = 0
 		totalFailed = 0
+		error = None
+		failedMethod = None
 		for suite in suites:
-			passed, failed, error, failedMethod = run(suite, callback)
+			passed, failed, error, failedMethod = run(suite, callback, bail)
 			totalPassed += passed
 			totalFailed += failed
+
 		testResults.append((f, totalPassed, totalFailed, error, failedMethod))
+
+		# if error raised and bail=True, stop tests and print output
+		if error and bail:
+			break
 
 	# Folder summary
 	folder = os.path.split(root)[1]
@@ -342,6 +352,9 @@ def runFolder(path, callback=None):
 	folderFiles = len(testResults)
 	folderPassed = 0
 	folderFailed = 0
+	# Used if bail=True
+	folderError = None
+	folderMethod = None
 
 	for result in testResults:
 		testPath = os.path.join(folder, result[0])
@@ -349,20 +362,27 @@ def runFolder(path, callback=None):
 		testFailed = result[2]
 		testError = result[3]
 		testMethod = result[4]
-		if testFailed > 0:
-			colors('red', testPath + colors.end + ': ' + str(testPassed) + ' passed, ' + str(testFailed) + ' failed\n')
-			success = False
-			print 'Failing on test '+ testMethod + ' with:'
-			colors('red', '\nError:\n')
-			print testError
-		else:
-			colors('green', testPath + colors.end + ': ' + str(testPassed) + ' passed\n')
+
 		# update folderResults information
 		folderPassed += testPassed
 		folderFailed += testFailed
+
+		if testFailed > 0:
+			colors('red', testPath + colors.end + ': ' + str(testPassed) + ' passed, ' + str(testFailed) + ' failed\n')
+			success = False
+			if bail:
+				print 'Failing on test '+ testMethod + ' with:'
+				colors('red', '\nError:\n')
+				print testError.message
+				folderError = testError.message
+				folderMethod = testMethod
+		else:
+			colors('green', testPath + colors.end + ': ' + str(testPassed) + ' passed\n')
 	if success:
 		print('All tests passed.\n')
-	return folderFiles, folderPassed, folderFailed
+	else:
+		print('Failing test(s).\n')
+	return (folderFiles, folderPassed, folderFailed, folderError, folderMethod)
 
 def main():
 	class testStuff(TestSuite):
