@@ -303,12 +303,17 @@ def run(test, callback=None, *args, **kwargs):
 	else:
 		return (passed, failed, errMessage, failedMethod)
 
+# Function: runFolder
+# Runs all test files within folder specified at path
+# Prints per-folder summary after running all tests
+# Inputs: path to folder
+# Outputs: returns tuple of compiled information with number of files tested, total passed, total failed
 def runFolder(path):
 	root = os.path.dirname(path)
 	print 'running Folder'
 	files = os.listdir(root)
 	# testResults, a list of tuples, storing the testfile name, numPassed, numFailed, for all testfiles in a folder
-	results = []
+	testResults = []
 	for f in files:
 		if f[0] == '.' or \
 			f[-2:] != 'py' or \
@@ -326,14 +331,19 @@ def runFolder(path):
 			passed, failed, error, failedMethod = run(suite)
 			totalPassed += passed
 			totalFailed += failed
-		results.append((f, totalPassed, totalFailed, error, failedMethod))
+		testResults.append((f, totalPassed, totalFailed, error, failedMethod))
 
 	# Folder summary
 	folder = os.path.split(root)[1]
 	colors('blue', '\n\n Folder Summary:', colors.end + root)
 	colors('blue', '=' * TestSuite._lineLength + '\n')
 	success = True
-	for result in results:
+
+	folderFiles = len(testResults)
+	folderPassed = 0
+	folderFailed = 0
+
+	for result in testResults:
 		testPath = os.path.join(folder, result[0])
 		testPassed = result[1]
 		testFailed = result[2]
@@ -347,8 +357,12 @@ def runFolder(path):
 			print testError
 		else:
 			colors('green', testPath + colors.end + ': ' + str(testPassed) + ' passed\n')
+		# update folderResults information
+		folderPassed += testPassed
+		folderFailed += testFailed
 	if success:
 		print('All tests passed.\n')
+	return folderFiles, folderPassed, folderFailed
 
 def main():
 	class testStuff(TestSuite):
