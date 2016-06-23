@@ -341,6 +341,7 @@ def runFolder(path, callback=None, bail=True):
 
 		# if error raised and bail=True, stop tests and print output
 		if error and bail:
+			print 'Bailing...\n\nPrinting Folder Summary...'
 			break
 
 	# Folder summary
