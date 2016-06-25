@@ -12,7 +12,6 @@ class TestSuite(object):
 	_timeoutCheckin = .1
 	_errors = 0
 	_lineLength = 50
-	_lineColor = 'cyan'
 	_isTestSuite = True
 	_ignore = [
 		'run',
@@ -218,8 +217,8 @@ class TestSuite(object):
 	#					 if failure, error message
 	#					 if failure, failed method
 	def run(self, callback=None):
-		colors('magenta', '\n\n Suite:', colors.end + self.title)
-		colors('magenta', '=' * self._lineLength)
+		colors('cyan', '\n\n Suite:', colors.end + self.title)
+		colors('cyan', '=' * self._lineLength)
 
 		self._callback = callback
 		self._testNum = 0
@@ -238,7 +237,7 @@ class TestSuite(object):
 				.replace('_', ' ')
 
 			colors('cyan', '\n Test:', colors.end + methodName)
-			colors(self._lineColor, '=' * self._lineLength)
+			# colors('cyan', '=' * self._lineLength)
 
 			# Try _runTest() and catch any exceptions
 			# BaseExceptions are caught to include sys.exit()
@@ -260,17 +259,16 @@ class TestSuite(object):
 
 		self._runningTests = False
 		colors('cyan','\n\n Results:')
-		colors(self._lineColor, '=' * self._lineLength)
+		colors('cyan', '=' * self._lineLength)
 		passed = self._numTests - self._errors
 		msgPassed = str(passed) + ' passed'
 		failed = self._errors
 		msgFailed = str(failed) + ' failed'
-		title = '    ' + self.title + ':' + colors.end
+		title = ' ' + self.title + ':' + colors.end
 		if self._errors > 0:
 			colors('red', title, msgPassed + ',', msgFailed)
 		else:
 			colors('green', title, msgPassed)
-		colors(self._lineColor, '=' * self._lineLength)
 
 		if self._callback:
 			self._callback(None)
@@ -369,20 +367,20 @@ def runFolder(path, callback=None, bail=True):
 		folderFailed += testFailed
 
 		if testFailed > 0:
-			colors('red', testPath + colors.end + ': ' + str(testPassed) + ' passed, ' + str(testFailed) + ' failed\n')
+			colors('red', ' ' + testPath + colors.end + ': ' + str(testPassed) + ' passed, ' + str(testFailed) + ' failed\n')
 			success = False
 			if bail:
-				print 'Failing on test '+ testMethod + ' with:'
+				print ' Failing on test '+ testMethod + ' with:'
 				colors('red', '\nError:\n')
 				print testError.message
 				folderError = testError.message
 				folderMethod = testMethod
 		else:
-			colors('green', testPath + colors.end + ': ' + str(testPassed) + ' passed\n')
+			colors('green', ' ' + testPath + colors.end + ': ' + str(testPassed) + ' passed\n')
 	if success:
-		print('All tests passed.\n')
+		print(' All tests passed.\n')
 	else:
-		print('Failing test(s).\n')
+		print(' Failing test(s).\n')
 	return (folderFiles, folderPassed, folderFailed, folderError, folderMethod)
 
 def main():
