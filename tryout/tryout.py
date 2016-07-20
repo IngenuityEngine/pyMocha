@@ -96,6 +96,7 @@ class TestSuite(object):
 						target=startThread,
 						args=(self.tearDown, self._finishTest)
 						)
+					threading.daemon = True
 					functionThread.start()
 					waitOnTest()
 				else:
@@ -144,6 +145,7 @@ class TestSuite(object):
 						target=startThread,
 						args=(testFunction, tearDown)
 						)
+					threading.daemon = True
 					functionThread.start()
 					waitOnTest()
 				else:
@@ -177,6 +179,7 @@ class TestSuite(object):
 					target=startThread,
 					args=(self.setUp, runTest)
 					)
+				threading.daemon = True
 				functionThread.start()
 				waitOnTest()
 			else:
