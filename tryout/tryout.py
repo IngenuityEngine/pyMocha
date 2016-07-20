@@ -1,3 +1,4 @@
+# Standard Modules
 import os
 import sys
 import inspect
@@ -6,6 +7,11 @@ import time
 import traceback
 import threading
 import imp
+
+# Our Modules
+import arkInit
+arkInit.init()
+import cOS
 
 class TestSuite(object):
 	timeout = 5
@@ -31,6 +37,12 @@ class TestSuite(object):
 		self._methods = inspect.getmembers(self, predicate=inspect.ismethod)
 		# exclude run and any method that starts with _
 		self._methods = [method[0] for method in self._methods if method[0] not in self._ignore and method[0][0] != '_']
+
+		# Get file this class is extended in
+		path = sys.modules[self.__module__].__file__
+		path = os.path.abspath(path)
+		# if self.title is manually set in testfile, this will override it
+		self.title = cOS.normalizePath(path)
 
 	def assertEqual(self, a, b):
 		if not a == b:
@@ -313,7 +325,7 @@ def run(test, callback=None, bail=True):
 # Outputs: returns tuple of compiled information with number of files tested, total passed, total failed
 # includes error and method bailed on if bail=True
 def runFolder(path, callback=None, bail=True):
-	root = os.path.dirname(path)
+	root = cOS.normalizePath(os.path.dirname(path))
 	print 'running Folder'
 	files = os.listdir(root)
 	# testResults, a list of tuples, storing the testfile name, numPassed, numFailed, for all testfiles in a folder
@@ -359,7 +371,7 @@ def runFolder(path, callback=None, bail=True):
 	folderMethod = None
 
 	for result in testResults:
-		testPath = os.path.join(folder, result[0])
+		testPath = cOS.normalizePath(os.path.join(folder, result[0]))
 		testPassed = result[1]
 		testFailed = result[2]
 		testError = result[3]
