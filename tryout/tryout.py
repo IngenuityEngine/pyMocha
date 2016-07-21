@@ -104,12 +104,11 @@ class TestSuite(object):
 					inspect.getargspec(self.tearDown).args) > 1
 				if hasCallback:
 					self.callbackCalled = False
-					functionThread = threading.Thread(
+					self.thread = threading.Thread(
 						target=startThread,
-						args=(self.tearDown, self._finishTest)
-						)
-					threading.daemon = True
-					functionThread.start()
+						args=(self.tearDown, self._finishTest))
+					self.thread.daemon = True
+					self.thread.start()
 					waitOnTest()
 				else:
 					self.tearDown()
@@ -144,6 +143,7 @@ class TestSuite(object):
 
 		# run the test w/ tearDown as the callback
 		def runTest():
+			self.callbackCalled = True
 			# the callback is optional so we check if this test
 			# needs one
 			hasCallback = len(
@@ -153,12 +153,11 @@ class TestSuite(object):
 			try:
 				if hasCallback:
 					self.callbackCalled = False
-					functionThread = threading.Thread(
+					self.thread = threading.Thread(
 						target=startThread,
-						args=(testFunction, tearDown)
-						)
-					threading.daemon = True
-					functionThread.start()
+						args=(testFunction, tearDown))
+					self.thread.daemon = True
+					self.thread.start()
 					waitOnTest()
 				else:
 					testFunction()
@@ -187,12 +186,11 @@ class TestSuite(object):
 					inspect.getargspec(self.setUp).args) > 1
 			if hasCallback:
 				self.callbackCalled = False
-				functionThread = threading.Thread(
+				self.thread = threading.Thread(
 					target=startThread,
-					args=(self.setUp, runTest)
-					)
-				threading.daemon = True
-				functionThread.start()
+					args=(self.setUp, runTest))
+				self.thread.daemon = True
+				self.thread.start()
 				waitOnTest()
 			else:
 				self.setUp()
