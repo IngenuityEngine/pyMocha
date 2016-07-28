@@ -13,6 +13,9 @@ import arkInit
 arkInit.init()
 import cOS
 
+if os.environ.get('mode') != 'test':
+	raise Exception('Not in test mode, bailing')
+
 class TestSuite(object):
 	timeout = 5
 	_timeoutCheckin = .1
