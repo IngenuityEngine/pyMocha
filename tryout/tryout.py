@@ -13,9 +13,6 @@ import arkInit
 arkInit.init()
 import cOS
 
-if os.environ.get('mode') != 'test':
-	raise Exception('Not in test mode, bailing')
-
 class TestSuite(object):
 	timeout = 5
 	_timeoutCheckin = .1
@@ -97,6 +94,7 @@ class TestSuite(object):
 		self._testNum += 1
 
 	def _runTest(self):
+
 		testFunction = getattr(self, self._methods[self._testNum])
 		# run the tearDown function w/ optional callback
 		# when tearDown is done, call _finishTest
@@ -294,6 +292,9 @@ class TestSuite(object):
 		return (passed, failed, None, None)
 
 def run(test, callback=None, bail=True):
+	if os.environ.get('mode') != 'test':
+		raise Exception('Not in test mode, bailing')
+
 	suite = test(bail)
 
 	error = None
