@@ -292,8 +292,7 @@ class TestSuite(object):
 		return (passed, failed, None, None)
 
 def run(test, callback=None, bail=True):
-	if os.environ.get('mode') != 'test' and \
-		os.environ.get('ARK_MODE') != 'test':
+	if os.environ.get('mode') != 'test':
 		raise Exception('Not in test mode, bailing')
 
 	suite = test(bail)
