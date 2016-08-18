@@ -26,8 +26,11 @@ class TestSuite(object):
 		'tearDown',
 		'tearDownClass',
 		'assertEqual',
+		'assertNotEqual',
 		'assertTrue',
-		'assertIn'
+		'assertFalse',
+		'assertIn',
+		'assertNotIn'
 	]
 
 	title = 'Generic Tests'
