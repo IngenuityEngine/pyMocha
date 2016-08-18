@@ -48,13 +48,25 @@ class TestSuite(object):
 		if not a == b:
 			raise Exception(str(a) + ' != ' + str(b))
 
+	def assertNotEqual(self, a, b):
+		if a == b:
+			raise Exception(str(a) + ' == ' + str(b))
+
 	def assertTrue(self, a):
 		if not a:
 			raise Exception(str(a) + ' != True')
 
+	def assertFalse(self, a):
+		if a:
+			raise Exception(str(a) + ' != False')
+
 	def assertIn(self, a, b):
 		if not a in b:
 			raise Exception(str(a) + ' not in ' + str(b))
+
+	def assertNotIn(self, a, b):
+		if a in b:
+			raise Exception(str(a) + ' in ' + str(b))
 
 	def _handleError(self, err=None, execInfo=None, caughtException=False):
 		if not err:
