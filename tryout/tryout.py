@@ -147,7 +147,8 @@ class TestSuite(object):
 			while time.time() < startTime + self.timeout and \
 				not self.callbackCalled:
 				if calls > 0 and calls % callsPerPrint == 0:
-					print 'Waiting on callback'
+					# print 'Waiting on callback'
+					pass
 				time.sleep(self._timeoutCheckin)
 				calls += 1
 
